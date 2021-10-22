@@ -13,10 +13,10 @@ but with minimal modifications, it could be used as a starting point for test au
 # Project setup:
 - Install Node.js
 - Clone this repo to your desktop, go to its root directory and run:
-	- "pm init -y"
-	- "pm install selenium-webdriver"
-	- "pm install chromedriver"
-	- "pm install --save-dev mocha"
+	- "npm init -y"
+	- "npm install selenium-webdriver"
+	- "npm install chromedriver"
+	- "npm install --save-dev mocha"
 - Run test suite:
  - Open terminal and position in project root directory
  - Run "npm test"
