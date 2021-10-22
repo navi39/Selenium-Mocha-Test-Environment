@@ -39,7 +39,7 @@ and installed again using
 	"npm install -g chromedriver"
   
 # Helpful links:
-https://www.selenium.dev/documentation/overview/
-https://www.selenium.dev/selenium/docs/api/javascript/index.html
-https://mochajs.org/
-https://nodejs.org/en/docs/
+* [Selenium](https://www.selenium.dev/documentation/overview/)
+* [Selenium-webdriver](https://www.selenium.dev/selenium/docs/api/javascript/index.html)
+* [Mocha](https://mochajs.org/)
+* [Node.js](https://nodejs.org/en/docs/)
