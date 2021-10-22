@@ -5,38 +5,36 @@ Structured example of test automation environment using Selenium atop of Mocha f
 # Overview:
 Structured test automation environment aimed to test UI testing. In this example, it is used to test Evernote application,
 but with minimal modifications, it could be used as a starting point for test automation of any other web application.
-Tech stack:
+<br />Tech stack:
 - Node.js
 - Mochajs
-- Selenium Webdriver
-The project is structured according to POM (Page Object Model) pattern
+- Selenium Webdriver<br />The project is structured according to POM (Page Object Model) pattern
 
 # Project setup:
 - Install Node.js
 - Clone this repo to your desktop, go to its root directory and run:
-	- npm init -y
-	- npm install selenium-webdriver
-	- npm install chromedriver
-	- npm install --save-dev mocha
+	- "pm init -y"
+	- "pm install selenium-webdriver"
+	- "pm install chromedriver"
+	- "pm install --save-dev mocha"
 - Run test suite:
  - Open terminal and position in project root directory
  - Run "npm test"
 
 # Detailed project explanation:
-Tests run is defined in testsuite.js
-Test implementation can be found in /test folder
-Methods used in test cases are defined in /pages folder
-In /utils folder are important files for the functioning of test environment:
-	common.js -> general methods that is used throughout the project
-	init.js -> methods to initialize project
+Tests run is defined in testsuite.js<br />
+Test implementation can be found in "/test" folder<br />
+Methods used in test cases are defined in "/pages" folder<br />
+In "/utils" folder are important files for the functioning of test environment:<br />
+- common.js -> general methods that is used throughout the project<br />
+- init.js -> methods to initialize project<br />
   
 # Possible issues:
-WHen multiple test are run in Chrome, sometimes they fail with error message:
-Error: Server terminated early with status 1
-Solution: Uninstalling chromedriver package using 
-	"npm uninstall -g chromedriver"
-and installed again using 
-	"npm install -g chromedriver"
+When multiple test are run in Chrome, sometimes they fail with error message:<br />
+Error: Server terminated early with status 1<br />
+Solution: Uninstalling and install chromedriver package using commands:<br />
+- "npm uninstall -g chromedriver"<br />
+- "npm install -g chromedriver"<br />
   
 # Helpful links:
 * [Selenium](https://www.selenium.dev/documentation/overview/)
