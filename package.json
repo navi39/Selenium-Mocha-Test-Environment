@@ -1,0 +1,19 @@
+{
+  "name": "TestEvernote",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --no-timeouts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^94.0.0",
+    "selenium-webdriver": "^4.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^9.1.3"
+  }
+}
