@@ -1,5 +1,5 @@
 "use strict";
-const mainPageFactory = require("../pages/mainPage");
+
 const loginPageFactory = require("../pages/loginPage");
 const dashboardPageFactory = require("../pages/dashboardPage");
 const logoutPageFactory = require("../pages/logoutPage");
@@ -27,14 +27,7 @@ const INVALID_PASSWORD = "BadPass";
  */
 const loginLogoutTC = {
   testFunction: async (driver) => {
-    await mainPageFactory.validateMainPageIsOpened(driver);
-    await mainPageFactory.clickLoginPageFromTopRibbon(driver);
-    await loginPageFactory.validateLoginPageIsOpened(driver);
-    await loginPageFactory.enterLoginCredentials(
-      driver,
-      USER_EMAIL,
-      USER_PASSWORD
-    );
+    await loginPageFactory.logIn(driver, USER_EMAIL, USER_PASSWORD);
     await dashboardPageFactory.validateDashboardPageIsOpened(driver);
     await dashboardPageFactory.logOutUser(driver, USER_EMAIL);
     await logoutPageFactory.validateLogOutPageIsOpened(driver);
@@ -61,14 +54,7 @@ const loginLogoutTC = {
  */
 const invalidLoginTC = {
   testFunction: async (driver) => {
-    await mainPageFactory.validateMainPageIsOpened(driver);
-    await mainPageFactory.clickLoginPageFromTopRibbon(driver);
-    await loginPageFactory.validateLoginPageIsOpened(driver);
-    await loginPageFactory.enterLoginCredentials(
-      driver,
-      USER_EMAIL,
-      INVALID_PASSWORD
-    );
+    await loginPageFactory.logIn(driver, USER_EMAIL, INVALID_PASSWORD);
     await loginPageFactory.validateIncorrectPassword(driver);
   },
   testDelay: 3500,
