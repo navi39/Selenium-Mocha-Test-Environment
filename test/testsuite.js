@@ -1,24 +1,26 @@
 "use strict";
 
-const Mocha = require("mocha");
 const initFactory = require("../Utils/init").initFactory();
 const loginLogoutTC = require("./login.test").loginLogoutTC;
 const invalidLoginTC = require("./login.test").invalidLoginTC;
+const createNoteTC = require("./note.test").createNoteTC;
+const common = require("../Utils/common");
 
 describe("All Tests:", () => {
   const EVERNOTE_URL = "https://evernote.com/";
   let initInstance;
   let driver;
-  var mocha = new Mocha();
 
   beforeEach(async () => {
-    // Initial timeout (5s) -> Needed when running multiple TCs
-    mocha.timeout(5000);
+    // Initial timeout (3s) -> Needed when running multiple TCs
+    await common.sleep(3000);
     // Initialise function according Module pattern
     initInstance = initFactory.getInstance();
     // Create Chrome webDriver
+    await common.sleep(3000);
     initInstance.createWebDriverInstance();
     // Fetch driver instance
+    await common.sleep(3000);
     driver = initInstance.getDriver();
     // Open website and validate that it is opened
     await initInstance.openUrl(EVERNOTE_URL);
@@ -46,6 +48,16 @@ describe("All Tests:", () => {
         await invalidLoginTC.testFunction(driver);
       },
       invalidLoginTC.testDelay
+    );
+  });
+
+  describe("Note suite:", () => {
+    it(
+      createNoteTC.testName,
+      async () => {
+        await createNoteTC.testFunction(driver);
+      },
+      createNoteTC.testDelay
     );
   });
 });

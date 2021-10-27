@@ -1,7 +1,4 @@
 "use strict";
-const { until } = require("selenium-webdriver");
-const { By } = require("selenium-webdriver");
-const assert = require("assert");
 
 const common = require("../Utils/common");
 
@@ -11,15 +8,27 @@ const MAIN_PAGE_TITLE =
   "Best Note Taking App - Organize Your Notes with Evernote";
 const LOGIN_TOP_RIBBON = "Log In";
 
-// Methods for testing main page
+/**
+ * Validate that main  page is opened
+ *
+ * @author: navi39
+ * @param {WebDriver} driver driver instance
+ */
 exports.validateMainPageIsOpened = async function (driver) {
   await common.validatePageIsOpened(driver, MAIN_PAGE_H1, MAIN_PAGE_TITLE);
 };
 
+/**
+ * Click on Login button from top ribbon in main page
+ *
+ * @author: navi39
+ * @param {WebDriver} driver driver instance
+ */
 exports.clickLoginPageFromTopRibbon = async function (driver) {
   if (!driver) {
     throw "Driver is not initialized!";
   }
   // Click on Top Ribbon Login button
-  await common.clickElementByText(driver, LOGIN_TOP_RIBBON);
+  var elem = await common.getElementByText(driver, LOGIN_TOP_RIBBON);
+  await elem.click();
 };

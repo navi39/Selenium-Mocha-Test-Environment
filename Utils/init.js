@@ -4,6 +4,10 @@ const chrome = require("selenium-webdriver/chrome");
 const path = require("chromedriver"); // Adding Chromedriver to correct PATH
 const common = require("../Utils/common");
 
+/**
+ * Sigleton function for driver initialisation
+ * @author: navi39
+ */
 let initFactory = function () {
   function initClass() {
     const MAIN_PAGE_H1 = "Tame your work, organize your life";
@@ -11,6 +15,10 @@ let initFactory = function () {
       "Best Note Taking App - Organize Your Notes with Evernote";
     let driver;
 
+    /**
+     * Create webdriver instance for Chrome
+     * @author: navi39
+     */
     const createWebDriverInstance = function () {
       let chromeOptions = new chrome.Options();
       chromeOptions.addArguments("--incognito");
@@ -21,6 +29,11 @@ let initFactory = function () {
         .build();
     };
 
+    /**
+     * Getter method for driver
+     * @author: navi39
+     * @returns driver
+     */
     const getDriver = function () {
       if (!driver) {
         throw "Driver is not initialized!";
@@ -28,6 +41,12 @@ let initFactory = function () {
       return driver;
     };
 
+    /**
+     * Open URL and validate that it is opened
+     *
+     * @author: navi39
+     * @param {String} url
+     */
     const openUrl = async function (url) {
       if (!driver) {
         throw "Driver is not initialized!";
@@ -38,6 +57,11 @@ let initFactory = function () {
       await common.validatePageIsOpened(driver, MAIN_PAGE_H1, MAIN_PAGE_TITLE);
     };
 
+    /**
+     * Close driver
+     *
+     * @author: navi39
+     */
     const closeWebDriverInstance = async function () {
       await driver.quit();
     };
