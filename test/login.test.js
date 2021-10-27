@@ -27,7 +27,7 @@ const INVALID_PASSWORD = "BadPass";
  */
 const loginLogoutTC = {
   testFunction: async (driver) => {
-    await loginPageFactory.logIn(driver, USER_EMAIL, USER_PASSWORD);
+    await loginPageFactory.logInFromMainPage(driver, USER_EMAIL, USER_PASSWORD);
     await dashboardPageFactory.validateDashboardPageIsOpened(driver);
     await dashboardPageFactory.logOutUser(driver, USER_EMAIL);
     await logoutPageFactory.validateLogOutPageIsOpened(driver);
@@ -54,7 +54,11 @@ const loginLogoutTC = {
  */
 const invalidLoginTC = {
   testFunction: async (driver) => {
-    await loginPageFactory.logIn(driver, USER_EMAIL, INVALID_PASSWORD);
+    await loginPageFactory.logInFromMainPage(
+      driver,
+      USER_EMAIL,
+      INVALID_PASSWORD
+    );
     await loginPageFactory.validateIncorrectPassword(driver);
   },
   testDelay: 3500,
