@@ -13,14 +13,11 @@ Tech stack:
 
 # Project setup:
 - Install Node.js
-- Clone this repo to your desktop, go to its root directory and run:
-	- "npm init -y"
-	- "npm install selenium-webdriver"
-	- "npm install chromedriver"
-	- "npm install --save-dev mocha"
+	- Clone this repo to your desktop, go to its root directory and run:
+		- "npm install"
 - Run test suite:
- - Open terminal and position in project root directory
- - Run "npm test"
+	- Open terminal and position in project root directory and run 
+		- "npm test"
 
 # Detailed project explanation:
 Tests run is defined in testsuite.js<br />
