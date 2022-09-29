@@ -28,7 +28,7 @@ In "/utils" folder are important files for the functioning of test environment:<
 - init.js -> methods to initialize project<br />
   
 # Possible issues:
-When multiple test are run in Chrome, sometimes they fail with error message:<br />
+When multiple tests are run in Chrome, sometimes they fail with error message:<br />
 Error: Server terminated early with status 1<br />
 Solution: Uninstalling and install chromedriver package using commands:<br />
 - "npm uninstall -g chromedriver"<br />
