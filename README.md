@@ -1,10 +1,10 @@
 # Selenium-Mocha-Test-Environment
-Structured example of test automation environment using Selenium atop of Mocha framework 
+Structured example of test automation environment using Selenium atop of a Mocha framework 
 
 
 # Overview:
-Structured test automation environment aimed to test UI testing. In this example, it is used to test Evernote application,
-but with minimal modifications, it could be used as a starting point for test automation of any other web application.<br />
+Structured test automation environment aimed to UI testing. In this example, it is used to test Evernote application,
+but with minimal modifications, it could be used as a starting point for a test automation of any other web application.<br />
 The project is structured according to POM (Page Object Model) pattern.<br />
 Tech stack:
 - Node.js
