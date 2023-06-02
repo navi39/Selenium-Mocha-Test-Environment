@@ -10,6 +10,8 @@ const DASHBOARD_PAGE_BUTTON = "Home";
 const DASHBOARD_PAGE_TITLE = "Home - Evernote";
 const DASHBOARD_USER_NAVIGATION_ID = "qa-NAV_USER";
 const DASHBOARD_NOTES_ID = "qa-NAV_ALL_NOTES";
+const DASHBOARD_UNSYNCED_CHANGES_POPUP_ID = "qa-LOGOUT_CONFIRM_DIALOG";
+const DASHBOARD_UNSYNCED_CHANGES_CLOSE_BUTTON_ID = "qa-LOGOUT_CONFIRM_DIALOG_CLOSE";
 
 /**
  * Validate that dashboard page is opened
@@ -24,6 +26,21 @@ exports.validateDashboardPageIsOpened = async function (driver) {
     DASHBOARD_PAGE_TITLE
   );
 };
+
+
+exports.closeSyncPopUp = async function (driver){
+  if (!driver) {
+      throw "Driver is not initialized!";
+  }
+  await common.sleep(3000);
+  if(await common.doesElementExist(driver, By.id(DASHBOARD_UNSYNCED_CHANGES_POPUP_ID))){
+    var element = await common.getElementById(
+      driver,
+      DASHBOARD_UNSYNCED_CHANGES_CLOSE_BUTTON_ID
+    );
+    element.click();
+  }
+}
 
 /**
  * Logout user
