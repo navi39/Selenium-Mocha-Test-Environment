@@ -29,6 +29,7 @@ const loginLogoutTC = {
   testFunction: async (driver) => {
     await loginPageFactory.logInFromMainPage(driver, USER_EMAIL, USER_PASSWORD);
     await dashboardPageFactory.validateDashboardPageIsOpened(driver);
+    await dashboardPageFactory.closeSyncPopUp(driver);
     await dashboardPageFactory.logOutUser(driver, USER_EMAIL);
     await logoutPageFactory.validateLogOutPageIsOpened(driver);
   },

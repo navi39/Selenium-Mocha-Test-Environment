@@ -92,10 +92,16 @@ exports.getElementById = async function (driver, id) {
     until.elementIsVisible(
       driver.findElement(By.id(id), 10000),
       10000,
-      "Failed to read text: " + id
+      "Failed to read id: " + id
     )
   );
   return element;
+};
+
+
+exports.doesElementExist = async function(driver, locator) {
+  const elements = await driver.findElements(locator);
+  return elements.length > 0;
 };
 
 /**
