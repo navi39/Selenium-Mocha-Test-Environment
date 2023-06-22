@@ -69,10 +69,7 @@ exports.createNewNote = async function (driver, title, text) {
  * @param {WebDriver} driver driver instance
  * @param {SORT_BY} sortBy sorting option
  */
-const selectSortByNotes = (exports.selectSortByNotes = async function (
-  driver,
-  sortBy
-) {
+exports.selectSortByNotes = async function (driver, sortBy) {
   // Click on "Sort options" dropdown button
   var sortOptionsElement = await common.getElementById(
     driver,
@@ -85,22 +82,16 @@ const selectSortByNotes = (exports.selectSortByNotes = async function (
       sortByElement = await common.getElementById(driver, SORT_BY.TITLE_ID);
       break;
     case SORT_BY.DATA_UPDATED_ID:
-      sortByElement = await common.getElementById(
-        driver,
-        SORT_BY.DATA_UPDATED_ID
-      );
+      sortByElement = await common.getElementById(driver, SORT_BY.DATA_UPDATED_ID);
       break;
     case SORT_BY.DATA_CREATED_ID:
-      sortByElement = await common.getElementById(
-        driver,
-        SORT_BY.DATA_CREATED_ID
-      );
+      sortByElement = await common.getElementById(driver, SORT_BY.DATA_CREATED_ID);
       break;
     default:
       throw "Faulty sort option!";
   }
   await sortByElement.click();
-});
+};
 
 /**
  *  Validate saved note record title and content
