@@ -1,11 +1,13 @@
 "use strict";
+const credentials = require("../credentials.json");
 
 const loginPageFactory = require("../pages/loginPage");
 const dashboardPageFactory = require("../pages/dashboardPage");
 const logoutPageFactory = require("../pages/logoutPage");
 
-const USER_EMAIL = "***REMOVED***";
-const USER_PASSWORD = "***REMOVED***";
+// Enter login credentials in file: credentials.json
+const USER_EMAIL = credentials.userEmail;
+const USER_PASSWORD = credentials.password;
 const INVALID_PASSWORD = "BadPass";
 
 /** Test: loginLogoutTC

@@ -1,4 +1,5 @@
 "use strict";
+const credentials = require("../credentials.json");
 
 const loginPageFactory = require("../pages/loginPage");
 const dashboardPageFactory = require("../pages/dashboardPage");
@@ -7,8 +8,8 @@ const logoutPageFactory = require("../pages/logoutPage");
 const common = require("../Utils/common");
 
 // Test data
-const USER_EMAIL = "***REMOVED***";
-const USER_PASSWORD = "***REMOVED***";
+const USER_EMAIL = credentials.userEmail;
+const USER_PASSWORD = credentials.password;
 const TITLE = "Selenium Automation";
 const TEXT = "Just a demo text!";
 
